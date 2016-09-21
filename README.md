@@ -77,14 +77,14 @@ the id of the checkboxs input contains the prefix and an incremental number star
 ## ulClass
 
 * **Type:** `String`
-* **Default:** `checkbox`
+* **Default:** `task-list`
 
 classname of ul wrapper.
 
 ## liClass
 
 * **Type:** `String`
-* **Default:** `checkbox`
+* **Default:** `task-list-item`
 
 classname of li wrapper.
 

@@ -8,18 +8,14 @@ var _ = require('underscore');
 module.exports = function(md, options) {
 	var defaults;
 	defaults = {
-	  divWrap: false,
 	  disabled: true,
+	  divWrap: false,
 	  divClass: 'checkbox',
 	  idPrefix: 'cbx_',
 	  ulClass: 'task-list',
 	  liClass: 'task-list-item'
 	};
 	options = _.extend(defaults, options);
-	// if (options) {
-	// 	disabled = !options.enabled;
-	// 	useLabelWrapper = !!options.label;
-	// }
 	md.core.ruler.after('inline', 'github-task-lists', function(state) {
 		var tokens = state.tokens;
 		var lastId = 0;
