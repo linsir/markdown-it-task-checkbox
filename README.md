@@ -4,10 +4,6 @@ A [markdown-it](https://www.npmjs.com/package/markdown-it) plugin to create GitH
 
 Modify from <https://github.com/mcecot/markdown-it-checkbox> and <https://github.com/revin/markdown-it-task-lists>
 
-## What it does
-
-- Builds [task/todo lists](https://github.com/blog/1825-task-lists-in-all-markdown-documents) out of markdown lists with items starting with `[ ]` or `[x]`.
-- Nothing else
 
 ## Usage
 
@@ -16,33 +12,11 @@ Modify from <https://github.com/mcecot/markdown-it-checkbox> and <https://github
 node.js, browser:
 
 ```bash
-npm install markdown-it-checkbox --save
-bower install markdown-it-checkbox --save
+npm install markdown-it-task-checkbox --save
+bower install markdown-it-task-checkbox --save
 ```
 
 ## Use
-
-```js
-var md = require('markdown-it')()
-            .use(require('markdown-it-checkbox'));
-
-md.render('[ ] unchecked') // =>
-// <p>
-//  <input type="checkbox" id="checkbox0">
-//  <label for="checkbox0">unchecked</label>
-// </p>
-
-md.render('[x] checked') // =>
-// <p>
-//  <input type="checkbox" id="checkbox0" checked="true">
-//  <label for="checkbox0">checked</label>
-// </p>
-```
-
-_Differences in browser._ If you load script directly into the page, without
-package system, module will add itself globally as `window.markdownitCheckbox`.
-
-## Options
 
 ```js
 var md = require('markdown-it')()
@@ -65,6 +39,12 @@ md.render('- [x] unchecked') // =>
 //  </li>
 // </ul>
 ```
+
+_Differences in browser._ If you load script directly into the page, without
+package system, module will add itself globally as `window.markdownitCheckbox`.
+
+## Options
+
 
 ## disabled
 
