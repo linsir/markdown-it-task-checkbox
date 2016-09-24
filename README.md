@@ -2,18 +2,17 @@
 
 A [markdown-it](https://www.npmjs.com/package/markdown-it) plugin to create GitHub-style [task lists](https://github.com/blog/1825-task-lists-in-all-markdown-documents)
 
-Modify from <https://github.com/mcecot/markdown-it-checkbox> and <https://github.com/revin/markdown-it-task-lists>
+Modified from <https://github.com/mcecot/markdown-it-checkbox> and <https://github.com/revin/markdown-it-task-lists>
 
 
 ## Usage
 
 ## Install
 
-node.js, browser:
+node.js:
 
 ```bash
 npm install markdown-it-task-checkbox --save
-bower install markdown-it-task-checkbox --save
 ```
 
 ## Use
