@@ -34,7 +34,7 @@
     "checkbox"
   ],
   "author": "linsir",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/linsir/markdown-it-task-checkbox/issues"
   },
