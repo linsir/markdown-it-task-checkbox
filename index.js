@@ -62,19 +62,15 @@ function isTodoItem(tokens, index) {
 function todoify(token, lastId, options, TokenConstructor) {
 	var id;
 	id = options.idPrefix + lastId
-	token.children.shift();
-	token.children.push(makeCheckbox(token, id, options, TokenConstructor));
-	// lable
-	token.children.push(makeLable(id, TokenConstructor));
-	//text
-	text = new TokenConstructor("text", "", 0);
-	text.content = token.content.slice(3);
-	token.children.push(text);
-	token.content = '';
-	// token.children.push(new TokenConstructor("label_close", "label", -1));
+	token.children[0].content = token.children[0].content.slice(3);
+	// label
+	token.children.unshift(beginLabel(id, TokenConstructor));
+	token.children.push(endLabel(TokenConstructor));
+	// checkbox
+	token.children.unshift(makeCheckbox(token, id, options, TokenConstructor));
 	if (options.divWrap) {
-		token.children.unshift(beginLabel(options, TokenConstructor));
-		token.children.push(endLabel(TokenConstructor));
+		token.children.unshift(beginWrap(options, TokenConstructor));
+		token.children.push(endWrap(TokenConstructor));
 	}
 }
 
@@ -92,21 +88,25 @@ function makeCheckbox(token, id, options, TokenConstructor) {
 	return checkbox;
 }
 
-function makeLable(id, TokenConstructor) {
+function beginLabel(id, TokenConstructor) {
 	var label = new TokenConstructor('label_open', 'label', 1);
 	label.attrs = [["for", id]];
 	return label;
 }
 
+function endLabel(TokenConstructor) {
+	return new TokenConstructor("label_close", "label", -1);
+}
+
 // these next two functions are kind of hacky; probably should really be a
 // true block-level token with .tag=='label'
-function beginLabel(options, TokenConstructor) {
+function beginWrap(options, TokenConstructor) {
 	var token = new TokenConstructor('checkbox_open', 'div', 0);
 	token.attrs = [["class", options.divClass]];
 	return token;
 }
 
-function endLabel(TokenConstructor) {
+function endWrap(TokenConstructor) {
 	var token = new TokenConstructor('checkbox_close', 'div', -1);
 	// token.content = '</label>';
 	return token;
