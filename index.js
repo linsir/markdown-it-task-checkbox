@@ -3,8 +3,6 @@
 // https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments
 // https://github.com/blog/1825-task-lists-in-all-markdown-documents
 
-var _ = require('underscore');
-
 module.exports = function(md, options) {
 	var defaults;
 	defaults = {
@@ -15,7 +13,7 @@ module.exports = function(md, options) {
 	  ulClass: 'task-list',
 	  liClass: 'task-list-item'
 	};
-	options = _.extend(defaults, options);
+	options = Object.assign(defaults, options);
 	md.core.ruler.after('inline', 'github-task-lists', function(state) {
 		var tokens = state.tokens;
 		var lastId = 0;
