@@ -13,7 +13,7 @@ module.exports = function(md, options) {
 	  ulClass: 'task-list',
 	  liClass: 'task-list-item'
 	};
-	options = Object.assign(defaults, options);
+	options = Object.assign({}, defaults, options);
 	md.core.ruler.after('inline', 'github-task-lists', function(state) {
 		var tokens = state.tokens;
 		var lastId = 0;
