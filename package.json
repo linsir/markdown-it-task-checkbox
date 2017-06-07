@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-task-checkbox",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A markdown-it plugin to create GitHub-style task lists",
   "main": "index.js",
   "scripts": {
