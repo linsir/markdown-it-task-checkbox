@@ -75,7 +75,7 @@ function todoify(token, lastId, options, TokenConstructor) {
 function makeCheckbox(token, id, options, TokenConstructor) {
 	var checkbox = new TokenConstructor('checkbox_input', 'input', 0);
 	checkbox.attrs = [["type", "checkbox"], ["id", id]];
-	var checked = (token.content.indexOf('[x] ') === 0 || token.content.indexOf('[X] ') === 0)
+	var checked = /^\[[xX]\][ \u00A0]/.test(token.content); // if token.content starts with '[x] ' or '[X] '
 	if (checked === true) {
 	  checkbox.attrs.push(["checked", "true"]);
 	}
@@ -115,6 +115,8 @@ function isParagraph(token) { return token.type === 'paragraph_open'; }
 function isListItem(token) { return token.type === 'list_item_open'; }
 
 function startsWithTodoMarkdown(token) {
-	// leading whitespace in a list item is already trimmed off by markdown-it
-	return token.content.indexOf('[ ] ') === 0 || token.content.indexOf('[x] ') === 0 || token.content.indexOf('[X] ') === 0;
+	// The leading whitespace in a list item (token.content) is already trimmed off by markdown-it.
+	// The regex below checks for '[ ] ' or '[x] ' or '[X] ' at the start of the string token.content,
+	// where the space is either a normal space or a non-breaking space (character 160 = \u00A0).
+	return /^\[[xX \u00A0]\][ \u00A0]/.test(token.content);
 }

@@ -5,3 +5,24 @@
 - [x ] not a todo item 4
 - [ x ] not a todo item 5
 -   [x] todo item 6
+- [ X] not a todo item 7
+- [X ] not a todo item 8
+- [ X ] not a todo item 9
+-   [X] todo item 10
+-   [ ] unchecked todo item with non-breaking space 11
+- [ ]
+- [  ] not a todo item with 2 non-breaking spaces 12
+- [  ] not a todo item with 1 non-breaking space and 1 space 13
+- [  ] not a todo item with 1 space and 1 non-breaking space 14
+- [ x] not a todo item with non-breaking space 15
+- [x ] not a todo item with non-breaking space 16
+- [ x ] not a todo item with 2 non-breaking spaces 17
+- [ x ] not a todo item with 1 non-breaking space and 1 space 18
+- [ x ] not a todo item with 1 space and 1 non-breaking space 19
+-   [x] todo item with non-breaking space 20
+- [ X] not a todo item with non-breaking space 21
+- [X ] not a todo item with non-breaking space 22
+- [ X ] not a todo item with 2 non-breaking spaces 23
+- [ X ] not a todo item with 1 space and 1 non-breaking space 24
+- [ X ] not a todo item with 1 non-breaking space and 1 space 25
+-   [X] todo item with non-breaking space 26

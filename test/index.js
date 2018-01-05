@@ -37,7 +37,7 @@ describe('markdown-it-task-lists', function() {
     });
 
     it('renders items marked up as [ ] as unchecked', function () {
-        var shouldBeUnchecked = (fixtures.ordered.match(/[\.\*\+-]\s+\[ \]/g) || []).length;
+        var shouldBeUnchecked = (fixtures.ordered.match(/[\.\*\+-]\s+\[[ \u00A0]\]/g) || []).length;
         assert.equal($.ordered('input[type=checkbox]:not(:checked)').length, shouldBeUnchecked);
     });
 
@@ -69,6 +69,15 @@ describe('markdown-it-task-lists', function() {
         assert(~html.indexOf('<li>[x ]'));
         assert(~html.indexOf('<li>[ x]'));
         assert(~html.indexOf('<li>[ x ]'));
+        assert(~html.indexOf('<li>[&#xA0; ]'));
+        assert(~html.indexOf('<li>[ &#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;]</li>'));
+        assert(~html.indexOf('<li>[x&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;x]'));
+        assert(~html.indexOf('<li>[&#xA0;x ]'));
+        assert(~html.indexOf('<li>[&#xA0;x&#xA0;]'));
+        assert(~html.indexOf('<li>[ x&#xA0;]'));
     });
 
     it('adds class .task-list-item to parent <li>', function () {
