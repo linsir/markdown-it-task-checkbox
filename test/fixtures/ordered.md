@@ -6,7 +6,6 @@
 6. [ ] unchecked ordered non-breaking-space 6
 7. [X] checked ordered non-breaking-space 7
 8. [ ] unchecked ordered non-breaking-space 8
-9. [-] checked ordered 9
-10. [ ] unchecked ordered 10
-11. [-] checked ordered non-breaking-space 11
-12. [ ] unchecked ordered non-breaking-space 12
+[//] Cheerio does not support indeterminate, so the Ordered tests don't support this section.
+[//] 9. [-] indeterminate ordered 9
+[//] 11. [-] indeterminate ordered non-breaking-space 10

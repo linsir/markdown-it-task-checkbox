@@ -14,41 +14,62 @@
 - [  ] not a todo item with 2 non-breaking spaces 12
 - [  ] not a todo item with 1 non-breaking space and 1 space 13
 - [  ] not a todo item with 1 space and 1 non-breaking space 14
-- [ x] not a todo item with non-breaking space 15
-- [x ] not a todo item with non-breaking space 16
-- [ x ] not a todo item with 2 non-breaking spaces 17
-- [ x ] not a todo item with 1 non-breaking space and 1 space 18
-- [ x ] not a todo item with 1 space and 1 non-breaking space 19
--   [x] todo item with non-breaking space 20
-- [ X] not a todo item with non-breaking space 21
-- [X ] not a todo item with non-breaking space 22
-- [ X ] not a todo item with 2 non-breaking spaces 23
-- [ X ] not a todo item with 1 space and 1 non-breaking space 24
-- [ X ] not a todo item with 1 non-breaking space and 1 space 25
--   [X] todo item with non-breaking space 26
-- [ -] not a todo item 27
-- [- ] not a todo item 28
-- [ - ] not a todo item 29
--   [-] todo item 30
-- [ -] not a todo item with non-breaking space 31
-- [- ] not a todo item with non-breaking space 32
-- [ - ] not a todo item with 2 non-breaking spaces 33
-- [ - ] not a todo item with 1 non-breaking space and 1 space 34
-- [ - ] not a todo item with 1 space and 1 non-breaking space 35
--   [-] todo item with non-breaking space 36
-- [x-] not a todo item 37
-- [x- ] not a todo item 38
-- [ x- ] not a todo item 39
-- [-x] not a todo item 40
-- [-x ] not a todo item 41
-- [ -x ] not a todo item 42
-- [ x-] not a todo item with non-breaking space 43
-- [x- ] not a todo item with non-breaking space 44
-- [ x- ] not a todo item with 2 non-breaking spaces 45
-- [ x- ] not a todo item with 1 non-breaking space and 1 space 46
-- [ x- ] not a todo item with 1 space and 1 non-breaking space 47
-- [ -x] not a todo item with non-breaking space 48
-- [-x ] not a todo item with non-breaking space 49
-- [ -x ] not a todo item with 2 non-breaking spaces 50
-- [ -x ] not a todo item with 1 non-breaking space and 1 space 51
-- [ -x ] not a todo item with 1 space and 1 non-breaking space 52
+- [   ] not a todo item with 2 space and 1 non-breaking space 15
+- [ x] not a todo item with non-breaking space 16
+- [x ] not a todo item with non-breaking space 17
+- [x  ] not a todo item with 2 non-breaking space 18
+- [x  ] not a todo item with 1 non-breaking space and 1 space 19
+- [x  ] not a todo item with 1 non-breaking space and 1 space 20
+- [ x ] not a todo item with 2 non-breaking spaces 21
+- [ x ] not a todo item with 1 non-breaking space and 1 space 22
+- [ x ] not a todo item with 1 space and 1 non-breaking space 23
+- [  x] not a todo item with 2 space and 1 non-breaking space 24
+- [  x] not a todo item with 2 space and 1 non-breaking space 25
+- [  x] not a todo item with 2 space 26
+-   [x] todo item with non-breaking space 27
+- [ X] not a todo item with non-breaking space 28
+- [X ] not a todo item with non-breaking space 29
+- [ X ] not a todo item with 2 non-breaking spaces 30
+- [ X ] not a todo item with 1 space and 1 non-breaking space 31
+- [ X ] not a todo item with 1 non-breaking space and 1 space 32
+-   [X] todo item with non-breaking space 33
+- [ -] not a todo item 34
+- [- ] not a todo item 35
+- [ - ] not a todo item 36
+-   [-] todo item 37
+- [ -] not a todo item with non-breaking space 38
+- [- ] not a todo item with non-breaking space 39
+- [-  ] not a todo item with 2 non-breaking space 40
+- [-  ] not a todo item with 1 non-breaking space and 1 space 41
+- [-  ] not a todo item with 1 non-breaking space and 1 space 42
+- [ - ] not a todo item with 2 non-breaking spaces 43
+- [ - ] not a todo item with 1 non-breaking space and 1 space 44
+- [ - ] not a todo item with 1 space and 1 non-breaking space 45
+- [  -] not a todo item with 2 space and 1 non-breaking space 46
+- [  -] not a todo item with 2 space and 1 non-breaking space 47
+- [  -] not a todo item with 2 space 48
+-   [-] todo item with non-breaking space 49
+- [x-] not a todo item 50
+- [ x-] not a todo item with non-breaking space 51
+- [x- ] not a todo item with non-breaking space 52
+- [x-  ] not a todo item with 2 non-breaking space 53
+- [x-  ] not a todo item with 1 non-breaking space and 1 space 54
+- [x-  ] not a todo item with 1 non-breaking space and 1 space 55
+- [ x- ] not a todo item with 2 non-breaking spaces 56
+- [ x- ] not a todo item with 1 non-breaking space and 1 space 57
+- [ x- ] not a todo item with 1 space and 1 non-breaking space 58
+- [  x-] not a todo item with 2 space and 1 non-breaking space 59
+- [  x-] not a todo item with 2 space and 1 non-breaking space 60
+- [  x-] not a todo item with 2 space 61
+- [-x] not a todo item 62
+- [ -x] not a todo item with non-breaking space 63
+- [-x ] not a todo item with non-breaking space 64
+- [-x  ] not a todo item with 2 non-breaking space 65
+- [-x  ] not a todo item with 1 non-breaking space and 1 space 66
+- [-x  ] not a todo item with 1 non-breaking space and 1 space 67
+- [ -x ] not a todo item with 2 non-breaking spaces 68
+- [ -x ] not a todo item with 1 non-breaking space and 1 space 69
+- [ -x ] not a todo item with 1 space and 1 non-breaking space 70
+- [  -x] not a todo item with 2 space and 1 non-breaking space 71
+- [  -x] not a todo item with 2 space and 1 non-breaking space 72
+- [  -x] not a todo item with 2 space 73
