@@ -79,10 +79,14 @@ function makeCheckbox(token, id, options, TokenConstructor) {
 	if (checked === true) {
 	  checkbox.attrs.push(["checked", "true"]);
 	}
+	var indeterminate = /^\[\-\][ \u00A0]/.test(token.content); // if token.content starts with '[-] '
+	if (indeterminate === true) {
+	  checkbox.attrs.push(["indeterminate", "true"]);
+	}
 	if (options.disabled === true) {
 	  checkbox.attrs.push(["disabled", "true"]);
 	}
-	
+
 	return checkbox;
 }
 
@@ -118,5 +122,5 @@ function startsWithTodoMarkdown(token) {
 	// The leading whitespace in a list item (token.content) is already trimmed off by markdown-it.
 	// The regex below checks for '[ ] ' or '[x] ' or '[X] ' at the start of the string token.content,
 	// where the space is either a normal space or a non-breaking space (character 160 = \u00A0).
-	return /^\[[xX \u00A0]\][ \u00A0]/.test(token.content);
+	return /^\[[xX \u00A0\-]\][ \u00A0]/.test(token.content);
 }

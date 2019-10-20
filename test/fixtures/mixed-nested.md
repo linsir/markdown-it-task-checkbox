@@ -5,6 +5,7 @@
    * not a todo item 2
    * not a todo item 3
    * [x] nested checked item 4
+   * [-] nested checked item 5
 2. bar
 3. spam
 
@@ -15,3 +16,4 @@
   - [ ] nested unchecked item 2
   - [x] nested checked item 3
   - [X] nested checked item 4
+  - [-] nested checked item 5
