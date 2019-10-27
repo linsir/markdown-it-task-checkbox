@@ -46,6 +46,13 @@ describe('markdown-it-task-lists', function() {
         assert.equal(shouldBeChecked, $.ordered('input[type=checkbox]:checked').length);
     });
 
+    /* Cheerio currently does not support :indeterminate
+    it('renders items marked up as [-] as indeterminate', function () {
+        var shouldBeIndeterminate = (fixtures.ordered.match(/[\.\*\+-]\s+\[\-\]/g) || []).length;
+        assert.equal(shouldBeIndeterminate, $.ordered('input[type=checkbox]:indeterminate').length);
+    });
+    */
+
     it('disables the rendered checkboxes', function () {
         assert(!$.bullet('input[type=checkbox].task-list-item-checkbox:not([disabled])').length);
     });
@@ -62,7 +69,7 @@ describe('markdown-it-task-lists', function() {
         assert($$('.task-list-item > label').length > 0);
     });
 
-    it('does NOT render [  ], "[ ]" (no space after closing bracket), [ x], [x ], or [ x ] as checkboxes', function () {
+    it('does NOT render [  ], "[ ]" (no space after closing bracket), [ x], [x ], [ x ], [ -], [- ], or [ - ] as checkboxes', function () {
         var html = $.dirty.html();
         assert(~html.indexOf('<li>[  ]'));
         assert(~html.indexOf('<li>[ ]</li>'));
@@ -71,13 +78,55 @@ describe('markdown-it-task-lists', function() {
         assert(~html.indexOf('<li>[ x ]'));
         assert(~html.indexOf('<li>[&#xA0; ]'));
         assert(~html.indexOf('<li>[ &#xA0;]'));
+        assert(~html.indexOf('<li>[ &#xA0; ]'));
         assert(~html.indexOf('<li>[&#xA0;&#xA0;]'));
-        assert(~html.indexOf('<li>[&#xA0;]</li>'));
         assert(~html.indexOf('<li>[x&#xA0;]'));
+        assert(~html.indexOf('<li>[x&#xA0; ]'));
+        assert(~html.indexOf('<li>[x &#xA0;]'));
+        assert(~html.indexOf('<li>[ x&#xA0;]'));
+        assert(~html.indexOf('<li>[x&#xA0;&#xA0;]'));
         assert(~html.indexOf('<li>[&#xA0;x]'));
         assert(~html.indexOf('<li>[&#xA0;x ]'));
+        assert(~html.indexOf('<li>[ &#xA0;x]'));
+        assert(~html.indexOf('<li>[&#xA0; x]'));
         assert(~html.indexOf('<li>[&#xA0;x&#xA0;]'));
-        assert(~html.indexOf('<li>[ x&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;&#xA0;x]'));
+        assert(~html.indexOf('<li>[- ]'));
+        assert(~html.indexOf('<li>[ -]'));
+        assert(~html.indexOf('<li>[ - ]'));
+        assert(~html.indexOf('<li>[-&#xA0;]'));
+        assert(~html.indexOf('<li>[-&#xA0; ]'));
+        assert(~html.indexOf('<li>[- &#xA0;]'));
+        assert(~html.indexOf('<li>[ -&#xA0;]'));
+        assert(~html.indexOf('<li>[-&#xA0;&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;-]'));
+        assert(~html.indexOf('<li>[&#xA0;- ]'));
+        assert(~html.indexOf('<li>[ &#xA0;-]'));
+        assert(~html.indexOf('<li>[&#xA0; -]'));
+        assert(~html.indexOf('<li>[&#xA0;-&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;&#xA0;-]'));
+        assert(~html.indexOf('<li>[x-&#xA0;]'));
+        assert(~html.indexOf('<li>[x-&#xA0; ]'));
+        assert(~html.indexOf('<li>[x- &#xA0;]'));
+        assert(~html.indexOf('<li>[ x-&#xA0;]'));
+        assert(~html.indexOf('<li>[x-&#xA0;&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;x-]'));
+        assert(~html.indexOf('<li>[&#xA0;x- ]'));
+        assert(~html.indexOf('<li>[ &#xA0;x-]'));
+        assert(~html.indexOf('<li>[&#xA0; x-]'));
+        assert(~html.indexOf('<li>[&#xA0;x-&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;&#xA0;-x]'));
+        assert(~html.indexOf('<li>[-x&#xA0;]'));
+        assert(~html.indexOf('<li>[-x&#xA0; ]'));
+        assert(~html.indexOf('<li>[-x &#xA0;]'));
+        assert(~html.indexOf('<li>[ -x&#xA0;]'));
+        assert(~html.indexOf('<li>[-x&#xA0;&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;-x]'));
+        assert(~html.indexOf('<li>[&#xA0;-x ]'));
+        assert(~html.indexOf('<li>[ &#xA0;-x]'));
+        assert(~html.indexOf('<li>[&#xA0; -x]'));
+        assert(~html.indexOf('<li>[&#xA0;-x&#xA0;]'));
+        assert(~html.indexOf('<li>[&#xA0;&#xA0;-x]'));
     });
 
     it('adds class .task-list-item to parent <li>', function () {
