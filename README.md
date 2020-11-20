@@ -19,7 +19,7 @@ npm install markdown-it-task-checkbox --save
 
 ```js
 var md = require('markdown-it')()
-            .use(require('markdown-it-checkbox'),{
+            .use(require('markdown-it-task-checkbox'),{
               disabled: true,
               divWrap: false,
               divClass: 'checkbox',
